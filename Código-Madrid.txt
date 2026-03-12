@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería de Madrid</title>
+    <style>
+    *{
+    line-height: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.galeria{
+    display: flex;       
+    gap: 20px;           
+}
+
+#principal{
+    width: 613px;
+    height: 460px;
+    object-fit: cover;
+}
+
+.miniaturas{
+    display: flex;
+    flex-direction: column;  
+    gap: 20px;              
+}
+
+.mini{
+    width: 133px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.mini:hover{
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <div class="galeria">
+        <img id="principal" src="madrid5.jpg" alt="Imagen principal">
+    <div class="miniaturas">
+        <img class="mini" src="madrid6.jpg" alt="">
+        <img class="mini" src="madrid5.jpg" alt="">
+        <img class="mini" src="madrid3.jpg" alt="">
+        <img class="mini" src="madrid1.jpg" alt="">
+    </div>    
+    </div>
+    <script> 
+    const principal = document.getElementById("principal");
+        const miniaturas = document.querySelectorAll(".mini");
+    miniaturas.forEach(mini => {
+        mini.addEventListener("click", () =>{
+            principal.src = mini.src;
+            
+        });
+    });
+    </script>
+    
+    
+</body>
+</html>
